@@ -10,4 +10,4 @@ install:
 before_script:
   - echo "started"
 script:
-  - grunt test
+  - grunt test --force
