@@ -4,7 +4,7 @@ node_js:
 install:
   - npm install
   - npm install bower
-  - npm install grunt
+  - bower install grunt
   - bower install
 before_script:
   - echo "started"
