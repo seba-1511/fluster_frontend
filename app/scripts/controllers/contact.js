@@ -14,4 +14,21 @@ angular.module('flusterFrontendApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.contacts = [{
+    	first: 'Anthony',
+    	last: 'Wittemann',
+    	email: 'awittema@usc.edu'
+    },{
+    	first: 'Gabriel',
+    	last: 'Pereyra',
+    	email: 'asdf@asdf.com'
+    },{
+    	first: 'Matthew',
+    	last: 'O\'Brien',
+    	email: 'asdf@asdf.com'
+    },{
+    	first: 'Sebastien',
+    	last: 'Arnold',
+    	email: 'asdf@asdf.com'
+    }];
   });

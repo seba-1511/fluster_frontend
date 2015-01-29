@@ -9,6 +9,7 @@
  */
 angular.module('flusterFrontendApp')
     .service('Server', function() {
+        //TODO change this url when we deploy on website
         this.URL = 'http://localhost:9000/';
         this.serverURL = 'http://localhost:8000/'
 
