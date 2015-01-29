@@ -9,7 +9,6 @@
  */
 angular.module('flusterFrontendApp')
     .controller('MainCtrl', function($scope, $location, $routeParams, Server) {
-        debugger;
         var loggedIn = false,
             state = $location.hash()
             .split('state=')[1];

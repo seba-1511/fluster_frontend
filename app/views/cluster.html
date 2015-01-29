@@ -1,1 +1,18 @@
-<p>This is the Cluster view.</p>
+<div class="alert alert-success" role="alert" ng-if="accepted">
+    Fluster added to Dropbox ! <span class="glyphicon glyphicon-thumbs-up"></span>
+</div>
+<div class="alert alert-danger" role="alert" ng-if="!accepted">
+     You denied the access to Dropbox... <span class="glyphicon glyphicon-thumbs-down"></span>
+</div>
+<div class="jumbotron">
+  <h1>Fluster</h1>
+  <p class="lead">
+      <img src="images/dropbox.png" alt="Clean your Dropbox" /><br>
+      Clean your Dropbox mess
+  </p>
+  <p>
+      <button class="btn btn-lg btn-success" ng-click="clusterDropbox();">
+        Clean Dropbox ! <span class="glyphicon glyphicon-ok"></span>
+    </button>
+</p>
+</div>

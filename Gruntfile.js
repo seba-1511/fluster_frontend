@@ -87,6 +87,7 @@ module.exports = function(grunt) {
                             connect.static(appConfig.app)
                         ];
                     }
+                    // Old config, not supporting html5 push state
                     // middleware: function(connect) {
                     //     return [
                     //         connect.static('.tmp'),
