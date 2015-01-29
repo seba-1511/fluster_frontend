@@ -33,6 +33,10 @@ angular
                 templateUrl: 'views/cluster.html',
                 controller: 'ClusterCtrl'
             })
+            .when('/Contact', {
+              templateUrl: 'views/contact.html',
+              controller: 'ContactCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
