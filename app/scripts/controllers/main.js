@@ -8,12 +8,15 @@
  * Controller of the flusterFrontendApp
  */
 angular.module('flusterFrontendApp')
-    .controller('MainCtrl', function($scope, $location, Server) {
-        var loggedIn = false;
+    .controller('MainCtrl', function($scope, $location, $routeParams, Server) {
+        debugger;
+        var loggedIn = false,
+            state = $location.hash()
+            .split('state=')[1];
+        if (loggedIn || state == 'cluster') {
+            $location.path('/Cluster/');
+        }
         $scope.authorizeDropbox = function() {
-            if (loggedIn) {
-                return $location.url(Server.URL + 'Cluster');
-            }
-            $location.url();
+            window.location.href = Server.authorizeURL;
         };
     });

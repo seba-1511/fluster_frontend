@@ -19,7 +19,7 @@ angular
         'ngSanitize',
         'ngTouch'
     ])
-    .config(function($routeProvider) {
+    .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -29,9 +29,14 @@ angular
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl'
             })
+            .when('/Cluster', {
+                templateUrl: 'views/cluster.html',
+                controller: 'ClusterCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
-        $locationProvider.html5Mode(false)
+
+        $locationProvider.html5Mode(true)
             .hashPrefix('!');
     });

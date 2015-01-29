@@ -8,6 +8,11 @@
  * Service in the flusterFrontendApp.
  */
 angular.module('flusterFrontendApp')
-  .service('Server', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+    .service('Server', function() {
+        this.URL = 'http://localhost:9000/';
+
+        this.authorizeURL =
+            'https://www.dropbox.com/1/oauth2/authorize?response_type=token&client_id=bb6pz3atllflo3h&redirect_uri=' +
+            this.URL + '&state=cluster';
+
+    });
