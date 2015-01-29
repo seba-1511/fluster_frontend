@@ -12,6 +12,8 @@ angular.module('flusterFrontendApp')
         var token, parseToken;
         $scope.mainImage = 'images/dropbox.png';
         $scope.description = 'Clean your Dropbox mess';
+        $scope.resultTitle = '';
+        $scope.files = [];
         $scope.accepted = $location.hash()
             .indexOf('error=') == -1;
 
@@ -34,8 +36,12 @@ angular.module('flusterFrontendApp')
             $scope.description =
                 'Please wait while Fluster is flustering...';
             Cluster.startClustering(token, function(res) {
-                console.log(res);
-                alert('Finished Clusering');
+                $scope.mainImage = 'images/dropbox_done.png';
+                $scope.description = 'Flustering completed !';
+                $scope.resultTitle = 'Here\'s your new home:';
+                $scope.files = res['contents'].map(function(curr, idx) {
+                    return curr['path'];
+                });
             });
         };
     });
