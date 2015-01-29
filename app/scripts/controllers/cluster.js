@@ -9,8 +9,22 @@
  */
 angular.module('flusterFrontendApp')
     .controller('ClusterCtrl', function($scope, $location) {
+        var token, parseToken;
+
         $scope.accepted = $location.hash()
             .indexOf('error=') == -1;
+
+        parseToken = function(text) {
+            return text.substring(
+                text.indexOf('access_token=') + 13,
+                text.indexOf('&')
+            );
+        };
+
+        if ($scope.accepted) {
+            token = parseToken($location.hash());
+            // User.sendToken();
+        }
         $scope.clusterDropbox = function() {
             if (!$scope.accepted) {
                 $location.path('/');
