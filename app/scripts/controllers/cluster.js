@@ -8,7 +8,7 @@
  * Controller of the flusterFrontendApp
  */
 angular.module('flusterFrontendApp')
-    .controller('ClusterCtrl', function($scope, $location) {
+    .controller('ClusterCtrl', function($scope, $location, User) {
         var token, parseToken;
 
         $scope.accepted = $location.hash()
@@ -23,7 +23,7 @@ angular.module('flusterFrontendApp')
 
         if ($scope.accepted) {
             token = parseToken($location.hash());
-            // User.sendToken();
+            User.sendToken(token);
         }
         $scope.clusterDropbox = function() {
             if (!$scope.accepted) {
