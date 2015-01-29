@@ -8,16 +8,15 @@
  * Factory in the flusterFrontendApp.
  */
 angular.module('flusterFrontendApp')
-  .factory('Cluster', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+    .factory('Cluster', function($http, Server, ) {
+        var privateVar;
+        return {
+            startClustering: function(token, callback) {
+                var url = Server.serverURL + 'Cluster/' + token;
+                $http.get(url)
+                    .then(function(data) {
+                        callback(data);
+                    }, Server.errorHandler);
+            }
+        };
+    });
