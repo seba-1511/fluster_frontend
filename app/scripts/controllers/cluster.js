@@ -33,6 +33,9 @@ angular.module('flusterFrontendApp')
             $scope.mainImage = 'images/spinner.gif';
             $scope.description =
                 'Please wait while Fluster is flustering...';
-            Cluster.initClustering();
+            Cluster.startClustering(token, function(res) {
+                console.log(res);
+                alert('Finished Clusering');
+            });
         };
     });

@@ -15,7 +15,8 @@ angular.module('flusterFrontendApp')
         // Public API here
         return {
             sendToken: function(token) {
-                console.log('Token:' + token);
+                // TODO: Implement this !
+                console.log('Token sent to registration:' + token);
             },
         };
     });

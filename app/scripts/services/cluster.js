@@ -8,14 +8,14 @@
  * Factory in the flusterFrontendApp.
  */
 angular.module('flusterFrontendApp')
-    .factory('Cluster', function($http, Server, ) {
+    .factory('Cluster', function($http, Server) {
         var privateVar;
         return {
             startClustering: function(token, callback) {
-                var url = Server.serverURL + 'Cluster/' + token;
+                var url = Server.serverURL + 'cluster/' + token;
                 $http.get(url)
-                    .then(function(data) {
-                        callback(data);
+                    .then(function(response) {
+                        callback(response.data);
                     }, Server.errorHandler);
             }
         };
