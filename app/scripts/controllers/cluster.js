@@ -8,9 +8,10 @@
  * Controller of the flusterFrontendApp
  */
 angular.module('flusterFrontendApp')
-    .controller('ClusterCtrl', function($scope, $location, User) {
+    .controller('ClusterCtrl', function($scope, $location, User, Cluster) {
         var token, parseToken;
-
+        $scope.mainImage = 'images/dropbox.png';
+        $scope.description = 'Clean your Dropbox mess';
         $scope.accepted = $location.hash()
             .indexOf('error=') == -1;
 
@@ -27,8 +28,11 @@ angular.module('flusterFrontendApp')
         }
         $scope.clusterDropbox = function() {
             if (!$scope.accepted) {
-                $location.path('/');
+                return $location.path('/');
             }
-            alert('Clustering');
+            $scope.mainImage = 'images/spinner.gif';
+            $scope.description =
+                'Please wait while Fluster is flustering...';
+            Cluster.initClustering();
         };
     });
