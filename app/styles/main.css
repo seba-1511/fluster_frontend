@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 800px;
   }
 }
 .container-narrow > hr {
@@ -78,6 +78,7 @@ body {
   } 
 }
 
+
 /* For About screen */
 .bottom .content p {padding: 0;margin:0}
 
@@ -114,3 +115,13 @@ body {
     line-height: 1.875em;
     font-weight: 300
 }
+
+
+/* For the d3 comparison at the bottom of the /Cluster page */
+.d3Comparison {
+  padding: 20px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+.d3Comparison .d3Before {float: left}
+.d3Comparison .d3After {float: right}

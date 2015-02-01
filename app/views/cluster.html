@@ -17,6 +17,8 @@
 </p>
 </div>
 <h3>{{resultTitle}}</h3>
+<!-- instead of listing the files, we can show them on the d3 file tree
+    - eventually, we need to engineer an elegant solution to comparing files before and after flustering-->
 <p>
   <ul>
     <li ng-repeat="(idx, file) in files">
@@ -24,3 +26,15 @@
     </li>
   </ul>
 </p>
+
+<div class="d3Comparison" ng-if="accepted">
+  <div class="d3Before">
+    <p>This is where the before d3 will go</p>
+
+  </div>
+
+  <div class="d3After">
+    <p>This is where the after d3 will go</p>
+
+  </div>
+</div>
