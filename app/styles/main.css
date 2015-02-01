@@ -75,5 +75,42 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
-  }
+  } 
+}
+
+/* For About screen */
+.bottom .content p {padding: 0;margin:0}
+
+.bottom .content .bullet-0 img {padding-right: 60px;margin-top:10px}
+
+.bottom .content .bullet-1 img {padding-left: 10px;margin-top:-34px}
+
+.bottom .content .bullet-2 img {padding-right: 30px;margin-top:-20px}
+
+.bottom .content .bullet-3 img {margin-top: -20px;padding-left:0px}
+
+.bottom .content .bullet-0 .bullet-image,
+.bottom .content .bullet-2 .bullet-image {float: right}
+
+.bottom .content .bullet-0 .bullet-content,
+.bottom .content .bullet-2 .bullet-content {float: left}
+
+.bottom .content .bullet-1 .bullet-image,
+.bottom .content .bullet-3 .bullet-image {float: left}
+
+.bottom .content .bullet-1 .bullet-content,
+.bottom .content .bullet-3 .bullet-content {float: right}
+
+.bottom .content .bullet {margin-bottom: 154px;clear:both}
+
+.bottom .content .bullet .bullet-content {width: 400px}
+
+.bottom .content .bullet .bullet-content .subline {font-size: 30px;color:#33536d}
+
+.bottom .content .bullet .bullet-content .description {
+    padding-top: 10px;
+    font-size: 16px;
+    color: #748796;
+    line-height: 1.875em;
+    font-weight: 300
 }
