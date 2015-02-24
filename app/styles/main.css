@@ -1,14 +1,24 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* for d3 formatting */
+.dot {
+  stroke: #000;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -23,7 +33,6 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
-
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -39,6 +48,12 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1600px;
+  }
+}
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -48,27 +63,32 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
-
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+  width:225px;
+  float:none;
+  margin:0 auto; 
+  height:45px; 
+  font-weight:normal; 
+  border:1px solid #0c6ebe; 
+  color:white; 
+  background:#007ee5; 
+  border-radius:3px; 
+  text-decoration:none; 
+  font-weight:normal; 
+  font-size:14px;
+  line-height:300%
 }
 
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
 }
-
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -76,14 +96,69 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-
-  /* Space out the masthead */
+/*  /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-
+  }*/
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
-  }
+  } 
+}
+
+
+/* For About screen */
+.bottom .content p {padding: 0;margin:0}
+
+.bottom .content .bullet-0 img {padding-right: 60px;margin-top:10px}
+
+.bottom .content .bullet-1 img {padding-left: 10px;margin-top:-34px}
+
+.bottom .content .bullet-2 img {padding-right: 30px;margin-top:-20px}
+
+.bottom .content .bullet-3 img {margin-top: -20px;padding-left:0px}
+
+.bottom .content .bullet-0 .bullet-image,
+.bottom .content .bullet-2 .bullet-image {float: right}
+
+.bottom .content .bullet-0 .bullet-content,
+.bottom .content .bullet-2 .bullet-content {float: left}
+
+.bottom .content .bullet-1 .bullet-image,
+.bottom .content .bullet-3 .bullet-image {float: left}
+
+.bottom .content .bullet-1 .bullet-content,
+.bottom .content .bullet-3 .bullet-content {float: right}
+
+.bottom .content .bullet {margin-bottom: 154px;clear:both}
+
+.bottom .content .bullet .bullet-content {width: 400px}
+
+.bottom .content .bullet .bullet-content .subline {font-size: 30px;color:#33536d}
+
+.bottom .content .bullet .bullet-content .description {
+    padding-top: 10px;
+    font-size: 16px;
+    color: #748796;
+    line-height: 1.875em;
+    font-weight: 300
+}
+
+
+/* For the d3 comparison at the bottom of the /Cluster page */
+.d3Comparison {
+  padding: 20px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+.d3Comparison .d3Before {
+  float: left
+}
+.d3Comparison .d3After {
+  float: right
+}
+
+#infovis{
+  width: 900px;
+  height: 450px;
 }

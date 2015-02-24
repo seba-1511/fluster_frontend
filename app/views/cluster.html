@@ -1,0 +1,49 @@
+<div class="alert alert-success" role="alert" ng-if="accepted">
+    Fluster added to Dropbox ! <span class="glyphicon glyphicon-thumbs-up"></span>
+</div>
+<div class="alert alert-danger" role="alert" ng-if="!accepted">
+     You denied the access to Dropbox... <span class="glyphicon glyphicon-thumbs-down"></span>
+</div>
+<div class="jumbotron">
+<!--   <h1>Fluster</h1>
+  <p class="lead">
+      <img ng-src="{{mainImage}}" alt="Clean your Dropbox" /><br>
+      <span>{{description}}</span>
+  </p>
+  <p>
+      <button class="btn btn-lg btn-success" ng-click="clusterDropbox();">
+        Clean Dropbox ! <span class="glyphicon glyphicon-ok"></span>
+    </button>
+  </p> -->
+
+  <h3>{{resultTitle}}</h3>
+  <!-- instead of listing the files, we can show them on the d3 file tree
+    - eventually, we need to engineer an elegant solution to comparing files before and after flustering-->
+<!--   <p>
+    <ul>
+      <li ng-repeat="(idx, file) in files">
+        {{file}}
+      </li>
+    </ul>
+  </p> -->
+
+  <div class="d3Comparison" ng-if="accepted">
+    <div class="col-md-*">
+      <div class="row">
+        <p>This is where the d3 will go</p>
+      </div>
+      
+      <div class="row">
+        <div id="infovis">
+          <!-- <svg style="width:900; height:450;"></svg> -->
+          <script src="scripts/scatter.js" type="text/javascript"></script>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
