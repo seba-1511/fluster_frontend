@@ -48,10 +48,13 @@ angular.module('flusterFrontendApp')
                     }
                 };
 
-                var shapes = [
-                    'circle', 'cross', 'triangle-up',
-                    'triangle-down', 'diamond', 'square'
-                ];
+                // var shapes = [
+                //     'circle', 'cross', 'triangle-up',
+                //     'triangle-down', 'diamond', 'square'
+                // ];
+
+                // changed to just circles as per Gabe's request
+                var shapes = ['circle'];
 
                 var parseData = function(data) {
                     var group, item, count = 0;
@@ -72,7 +75,7 @@ angular.module('flusterFrontendApp')
                 // scope.clusters = generateData(6, 40);
 
 
-
+                /* TODO get data from Matthew */
                 /* Random Data Generator (took from nvd3.org) */
                 function generateData(groups, points) {
                     var data = [],
