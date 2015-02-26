@@ -36,6 +36,7 @@ angular.module('flusterFrontendApp')
             $scope.description =
                 'Please wait while Fluster is flustering...';
             Cluster.startClustering(token, function(res) {
+                debugger
                 $scope.mainImage = 'images/dropbox_done.png';
                 $scope.description = 'Flustering completed !';
                 $scope.resultTitle = 'Here\'s your new home:';
@@ -44,5 +45,4 @@ angular.module('flusterFrontendApp')
                 });
             });
         };
-        //debugger
     });
