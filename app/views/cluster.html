@@ -1,12 +1,14 @@
 <div class="alert alert-success" role="alert" ng-if="accepted">
-    Fluster added to Dropbox ! <span class="glyphicon glyphicon-thumbs-up"></span>
+  Fluster added to Dropbox ! <span class="glyphicon glyphicon-thumbs-up"></span>
 </div>
 <div class="alert alert-danger" role="alert" ng-if="!accepted">
-     You denied the access to Dropbox... <span class="glyphicon glyphicon-thumbs-down"></span>
+ You denied the access to Dropbox... <span class="glyphicon glyphicon-thumbs-down"></span>
 </div>
 <div class="jumbotron">
   <h3>{{resultTitle}}</h3>
-  <div ng-if="accepted"></div>
+  <div ng-if="accepted">
+    <div flsr-cluster-viz></div>
+  </div>
 </div>
 
 

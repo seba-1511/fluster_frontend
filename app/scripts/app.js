@@ -17,7 +17,8 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'nvd3'
     ])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
@@ -34,8 +35,8 @@ angular
                 controller: 'ClusterCtrl'
             })
             .when('/Contact', {
-              templateUrl: 'views/contact.html',
-              controller: 'ContactCtrl'
+                templateUrl: 'views/contact.html',
+                controller: 'ContactCtrl'
             })
             .otherwise({
                 redirectTo: '/'
