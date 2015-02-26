@@ -11,9 +11,9 @@ angular.module('flusterFrontendApp')
         return {
             templateUrl: 'views/directives/ClusterViz.html',
             restrict: 'EACM',
-            replace: true,
+            replace: false,
             scope: {
-                // data: '=data',
+                data: '=data',
             },
             link: function postLink(scope, element, attrs) {
 
@@ -33,13 +33,13 @@ angular.module('flusterFrontendApp')
                         },
                         transitionDuration: 350,
                         xAxis: {
-                            axisLabel: 'X Axis',
+                            axisLabel: '',
                             tickFormat: function(d) {
                                 return d3.format('.02f')(d);
                             }
                         },
                         yAxis: {
-                            axisLabel: 'Y Axis',
+                            axisLabel: '',
                             tickFormat: function(d) {
                                 return d3.format('.02f')(d);
                             },
@@ -48,7 +48,30 @@ angular.module('flusterFrontendApp')
                     }
                 };
 
-                scope.data = generateData(4, 40);
+                var shapes = [
+                    'circle', 'cross', 'triangle-up',
+                    'triangle-down', 'diamond', 'square'
+                ];
+
+                var parseData = function(data) {
+                    var group, item, count = 0;
+                    var res = [];
+                    for (group in data) {
+                        for (item in data[group].values) {
+                            data[group].values[item].shape = shapes[
+                                count % 6];
+                        }
+                        count++;
+                        res.push(data[group]);
+                    }
+                    console.log(res);
+                    return res;
+                };
+                scope.clusters = parseData(scope.data);
+
+                // scope.clusters = generateData(6, 40);
+
+
 
                 /* Random Data Generator (took from nvd3.org) */
                 function generateData(groups, points) {
@@ -73,6 +96,7 @@ angular.module('flusterFrontendApp')
                             });
                         }
                     }
+                    console.log(data);
                     return data;
                 }
             }
