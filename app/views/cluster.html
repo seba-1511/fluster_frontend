@@ -4,10 +4,10 @@
 <div class="alert alert-danger" role="alert" ng-if="!accepted">
  You denied the access to Dropbox... <span class="glyphicon glyphicon-thumbs-down"></span>
 </div>
-<div class="jumbotron">
+<div class="col-md-*">
   <h3>{{resultTitle}}</h3>
   <div ng-if="accepted">
-    <div flsr-cluster-viz data="filesData"></div>
+    <div flsr-cluster-viz data="filesData" ></div>
   </div>
 </div>
 
