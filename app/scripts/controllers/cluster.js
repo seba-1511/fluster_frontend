@@ -45,4 +45,6 @@ angular.module('flusterFrontendApp')
                 });
             });
         };
+
+        $scope.clusterDropbox();
     });
