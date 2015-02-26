@@ -28,23 +28,23 @@ angular.module('flusterFrontendApp')
                         },
                         showDistX: false,
                         showDistY: false,
-                        tooltipContent: function(key) {
-                            return '<h3>' + key + '</h3>';
-                        },
-                        transitionDuration: 350,
-                        xAxis: {
-                            axisLabel: '',
-                            tickFormat: function(d) {
-                                return d3.format('.02f')(d);
-                            }
-                        },
-                        yAxis: {
-                            axisLabel: '',
-                            tickFormat: function(d) {
-                                return d3.format('.02f')(d);
-                            },
-                            axisLabelDistance: 30
-                        }
+                    tooltipContent: function(key) {
+                        return '<h3>' + key + '</h3>';
+                    },
+                        transitionDuration: 350 //,
+                        // xAxis: {
+                        //     axisLabel: '',
+                        //     tickFormat: function(d) {
+                        //         return d3.format('.02f')(d);
+                        //     }
+                        // },
+                        // yAxis: {
+                        //     axisLabel: '',
+                        //     tickFormat: function(d) {
+                        //         return d3.format('.02f')(d);
+                        //     },
+                        //     axisLabelDistance: 30
+                        // }
                     }
                 };
 
@@ -79,9 +79,11 @@ angular.module('flusterFrontendApp')
                 /* Random Data Generator (took from nvd3.org) */
                 function generateData(groups, points) {
                     var data = [],
-                        shapes = ['circle', 'cross', 'triangle-up',
-                            'triangle-down', 'diamond', 'square'
-                        ],
+                        // shapes = ['circle', 'cross', 'triangle-up',
+                        //     'triangle-down', 'diamond', 'square'
+                        // ],
+                        //just circles as per Gabe's request
+                        shapes = ['circle'],
                         random = d3.random.normal();
 
                     for (var i = 0; i < groups; i++) {
