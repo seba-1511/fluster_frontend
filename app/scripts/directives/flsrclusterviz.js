@@ -21,6 +21,7 @@ angular.module('flusterFrontendApp')
                     chart: {
                         type: 'scatterChart',
                         height: 450,
+                        width: 900,
                         color: d3.scale.category10()
                             .range(),
                         scatter: {
@@ -28,23 +29,29 @@ angular.module('flusterFrontendApp')
                         },
                         showDistX: false,
                         showDistY: false,
-                    tooltipContent: function(key) {
-                        return '<h3>' + key + '</h3>';
-                    },
-                        transitionDuration: 350 //,
-                        // xAxis: {
-                        //     axisLabel: '',
-                        //     tickFormat: function(d) {
-                        //         return d3.format('.02f')(d);
-                        //     }
-                        // },
-                        // yAxis: {
-                        //     axisLabel: '',
-                        //     tickFormat: function(d) {
-                        //         return d3.format('.02f')(d);
-                        //     },
-                        //     axisLabelDistance: 30
-                        // }
+                        tooltipContent: function(key) {
+                            return '<h3>' + key + '</h3>';
+                        },
+                        transitionDuration: 350,
+                        xAxis: {
+                            axisLabel: '',
+                            // tickFormat: function(d) {
+                            //     return d3.format('.02f')(d);
+                            // }
+                            tickFormat: function(d) {
+                                return '';
+                            }
+                        },
+                        yAxis: {
+                            axisLabel: '',
+                            // tickFormat: function(d) {
+                            //     return d3.format('.02f')(d);
+                            // },
+                            // axisLabelDistance: 30
+                            tickFormat: function(d) {
+                                return '';
+                            }
+                        }
                     }
                 };
 
