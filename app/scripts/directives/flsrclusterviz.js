@@ -16,6 +16,7 @@ angular.module('flusterFrontendApp')
                 data: '=data',
             },
             link: function postLink(scope, element, attrs) {
+                scope.clusters = false;
 
                 scope.options = {
                     chart: {
