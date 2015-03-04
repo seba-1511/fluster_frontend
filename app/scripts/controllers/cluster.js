@@ -37,6 +37,9 @@ angular.module('flusterFrontendApp')
             // $scope.files = res['contents'].map(function(curr, idx) {
             //     return curr['path'];
             // });
+
+            //TODO get the data from Matthew instead of generating it
+
             filesData = [{
                 x: .1,
                 y: .2,

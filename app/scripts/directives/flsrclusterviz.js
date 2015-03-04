@@ -21,6 +21,7 @@ angular.module('flusterFrontendApp')
                     chart: {
                         type: 'scatterChart',
                         height: 450,
+                        width: 900,
                         color: d3.scale.category10()
                             .range(),
                         scatter: {
@@ -34,24 +35,33 @@ angular.module('flusterFrontendApp')
                         transitionDuration: 350,
                         xAxis: {
                             axisLabel: '',
+                            // tickFormat: function(d) {
+                            //     return d3.format('.02f')(d);
+                            // }
                             tickFormat: function(d) {
-                                return d3.format('.02f')(d);
+                                return '';
                             }
                         },
                         yAxis: {
                             axisLabel: '',
+                            // tickFormat: function(d) {
+                            //     return d3.format('.02f')(d);
+                            // },
+                            // axisLabelDistance: 30
                             tickFormat: function(d) {
-                                return d3.format('.02f')(d);
-                            },
-                            axisLabelDistance: 30
+                                return '';
+                            }
                         }
                     }
                 };
 
-                var shapes = [
-                    'circle', 'cross', 'triangle-up',
-                    'triangle-down', 'diamond', 'square'
-                ];
+                // var shapes = [
+                //     'circle', 'cross', 'triangle-up',
+                //     'triangle-down', 'diamond', 'square'
+                // ];
+
+                // changed to just circles as per Gabe's request
+                var shapes = ['circle'];
 
                 var parseData = function(data) {
                     var group, item, count = 0;
@@ -72,13 +82,15 @@ angular.module('flusterFrontendApp')
                 // scope.clusters = generateData(6, 40);
 
 
-
+                /* TODO get data from Matthew */
                 /* Random Data Generator (took from nvd3.org) */
                 function generateData(groups, points) {
                     var data = [],
-                        shapes = ['circle', 'cross', 'triangle-up',
-                            'triangle-down', 'diamond', 'square'
-                        ],
+                        // shapes = ['circle', 'cross', 'triangle-up',
+                        //     'triangle-down', 'diamond', 'square'
+                        // ],
+                        //just circles as per Gabe's request
+                        shapes = ['circle'],
                         random = d3.random.normal();
 
                     for (var i = 0; i < groups; i++) {
