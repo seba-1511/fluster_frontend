@@ -30,7 +30,8 @@ angular.module('flusterFrontendApp')
                         showDistX: false,
                         showDistY: false,
                         tooltipContent: function(key) {
-                            return '<h3>' + key + '</h3>';
+                            return '<h5 style="color:black;weight:bolder;">' +
+                                key + '</h5>';
                         },
                         transitionDuration: 350,
                         xAxis: {
@@ -54,13 +55,7 @@ angular.module('flusterFrontendApp')
                         }
                     }
                 };
-
-                // var shapes = [
-                //     'circle', 'cross', 'triangle-up',
-                //     'triangle-down', 'diamond', 'square'
-                // ];
-
-                // changed to just circles as per Gabe's request
+                // just circles as per Gabe's request <- Seb loves it
                 var shapes = ['circle'];
 
                 var parseData = function(data) {
@@ -77,40 +72,10 @@ angular.module('flusterFrontendApp')
                     console.log(res);
                     return res;
                 };
-                scope.clusters = parseData(scope.data);
 
-                // scope.clusters = generateData(6, 40);
-
-
-                /* TODO get data from Matthew */
-                /* Random Data Generator (took from nvd3.org) */
-                function generateData(groups, points) {
-                    var data = [],
-                        // shapes = ['circle', 'cross', 'triangle-up',
-                        //     'triangle-down', 'diamond', 'square'
-                        // ],
-                        //just circles as per Gabe's request
-                        shapes = ['circle'],
-                        random = d3.random.normal();
-
-                    for (var i = 0; i < groups; i++) {
-                        data.push({
-                            key: 'Group ' + i,
-                            values: []
-                        });
-
-                        for (var j = 0; j < points; j++) {
-                            data[i].values.push({
-                                x: random(),
-                                y: random(),
-                                size: Math.random(),
-                                shape: shapes[j % 6]
-                            });
-                        }
-                    }
-                    console.log(data);
-                    return data;
-                }
+                scope.$watch('data', function(o, n) {
+                    scope.clusters = parseData(scope.data);
+                });
             }
         };
     });

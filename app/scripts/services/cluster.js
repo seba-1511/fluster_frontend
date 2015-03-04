@@ -12,7 +12,7 @@ angular.module('flusterFrontendApp')
         var privateVar;
         return {
             startClustering: function(token, callback) {
-                var url = Server.serverURL + 'Cluster/' + token;
+                var url = Server.serverURL + 'cluster/' + token;
                 $http.get(url)
                     .then(function(response) {
                         callback(response.data);
